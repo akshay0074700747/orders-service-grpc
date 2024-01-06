@@ -38,12 +38,12 @@ func main() {
 		log.Fatal(err.Error())
 	}
 
-	userConn, err := grpc.Dial(":50002", grpc.WithInsecure())
+	userConn, err := grpc.Dial("user-service:50002", grpc.WithInsecure())
 	if err != nil {
 		fmt.Println(err.Error())
 	}
 
-	productConn, err := grpc.Dial(":50004", grpc.WithInsecure())
+	productConn, err := grpc.Dial("product-service:50004", grpc.WithInsecure())
 	if err != nil {
 		fmt.Println(err.Error())
 	}
